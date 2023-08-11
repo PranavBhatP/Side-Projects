@@ -1,0 +1,7 @@
+These are some projects i would like to make(Alongside the hundred days of code challenge)
+
+1.WhatsApp birthday wisher bot
+2.Some data analysis project combining Pandas with Matplotlib
+3. One self made game using pygame.
+4. Tic -Tac -Toe
+5.News Web scraper
