@@ -1,1 +1,0 @@
-This is a simple reddit bot made using the reddit API --> PRAW
