@@ -5,3 +5,4 @@ These are some projects i would like to make(Alongside the hundred days of code 
 3. One self made game using pygame.
 4. Tic -Tac -Toe
 5.News Web scraper
+6. Open source contributions after learning about my interests.
