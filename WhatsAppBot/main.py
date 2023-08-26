@@ -1,9 +1,5 @@
 from tkinter import *
 import pywhatkit
-
-
-
-
         
 root = Tk()
 root.title("WhatsApp Bot")
@@ -11,13 +7,9 @@ root.geometry("400x300")
 
 def send_message(message, phoneno, hours, minutes):
     if message != '' and hours != '' and minutes != '' and phoneno != '':
-        try:
-            pywhatkit.sendwhatmsg(f"+91{phoneno}", f"{message}", hours, minutes)
-            label_display = Label(root, text = "Message will be sent soon!")
-            label_display.grid(row = 7, column = 4)
-        except:
-            label_display = Label(root, text = "Unable to send message!")
-            label_display.grid(row = 7, column = 4)
+        pywhatkit.sendwhatmsg(f"+91{phoneno}", f"{message}", hours, minutes)
+        label_display = Label(root, text = "Message has been sent!")
+        label_display.grid(row = 7, column = 4)
     else:
         label_display = Label(root, text = "Please enter your details fully and correctly")
         label_display.grid(row = 7, column = 4)
