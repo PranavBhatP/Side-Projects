@@ -2,12 +2,9 @@ import random
 
 cards = [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-def draw_card(player_list, comp_list):
-    while len(player_list) < 2:
-        player_list.append(random.choice(cards))
-
-    while len(comp_list) < 2:
-        comp_list.append(random.choice(cards))
+def draw_card(player_list, comp_list):    
+    player_list.append(random.choice(cards))
+    comp_list.append(random.choice(cards))
 
 
 def display_cards(player_list, comp_list):
@@ -16,8 +13,10 @@ def display_cards(player_list, comp_list):
     rand_num_comp = random.choice(comp_list)
 
     print("The computers card draws:")
-    print([" ", rand_num_comp])
-
+    if len(player_list) == 2:
+        print([" ", rand_num_comp])
+    else:
+        print([" "]* (len(player_list)-1) + [rand_num_comp])
 
 def hit_or_stand():
     choice = ""
@@ -64,8 +63,15 @@ while True:
     gameon =  True
 
     while gameon:
-        draw_card(user_list, computer_list)
+        while sum(user_list) < 16 and sum(computer_list) < 16:
+            draw_card(user_list, computer_list)
+        
         display_cards(user_list, computer_list)
+
+        if sum(user_list) > 21 or sum(computer_list) > 21:
+            win_dec(user_list, computer_list)
+            break
+        
         game_choice = hit_or_stand()
 
         if game_choice == "h":
