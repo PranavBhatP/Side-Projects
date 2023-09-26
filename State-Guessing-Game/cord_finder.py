@@ -23,4 +23,3 @@ turtle.shape(image)
 
 ans = turtle.textinput(title = "Enter", prompt = "Pleas enter some tex")
 print(ans)
-turtle.mainloop()
