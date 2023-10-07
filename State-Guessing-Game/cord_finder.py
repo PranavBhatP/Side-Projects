@@ -16,10 +16,9 @@ pen.penup()
 pen.hideturtle()
 pen.write("State Guessing Game", font = ("Courier", 24, "normal"))
 turtle.shape(image)
-# def get_mouse_click_coor(x, y):
-#     print(x, y)
+def get_mouse_click_coor(x, y):
+    print(x, y)
 
-# turtle.onscreenclick(get_mouse_click_coor)
+turtle.onscreenclick(get_mouse_click_coor)
 
-ans = turtle.textinput(title = "Enter", prompt = "Pleas enter some tex")
-print(ans)
+turtle.mainloop()
