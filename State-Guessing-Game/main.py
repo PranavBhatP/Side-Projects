@@ -44,7 +44,7 @@ gameon = True
 
 crct_guess = []
 pen.goto((50,300))
-pen.write("""State Guessing Game\nType exit to quit.""", font = ("Courier", 18, "normal"))
+pen.write("State Guessing Game", font = ("Courier", 18, "normal"))
 scoreboard.goto((150, 270))
 scoreboard.write(f"{len(crct_guess)}/30", align='center', font = ("Courier", 18, "normal"))
 
