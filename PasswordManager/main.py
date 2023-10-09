@@ -86,8 +86,7 @@ window.config(padx=50, pady=50)
 canvas = Canvas(height=200, width=200)
 logo_img = PhotoImage(file="/Users/prana/OneDrive/Desktop/Python Code/Side-Projects/PasswordManager/logo.png")
 canvas.create_image(100, 100, image=logo_img)
-canvas.create_text(1001, 100, text = "Hindi")
-canvas.grid(row=0, column=0, columnspan= 2)
+canvas.grid(row=0, column=1)
 
 #Labels
 website_label = Label(text="Website:")
