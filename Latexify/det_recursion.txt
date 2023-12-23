@@ -1,0 +1,62 @@
+det_recursion
+
+#include <stdio.h>
+
+int** submtx(int n, int** a, int ignore){
+    
+    int** b;
+    for(int i = 1, l = 0; i < n, l < n-1 ; i++, l++){
+        for(int j = 0, k = 0; j < n, l < n-1; j++, k++){
+            if (j==ignore){
+                continue;
+                k--;
+            }
+            else{
+                *(*(b+l)+k) = *(*(a+i)+j); 
+            }
+        }
+    }
+
+    return b;
+    
+}
+
+int determinant(int n,int** a, int *sum){
+    if(n==1)
+        return **a;
+    else if (n == 2){
+        return (**a)*(*(*(a+1)+1)) - (*(*(a+1)+0))*(*(*(a+0)+1));
+    }
+    else{
+        for(int h = 0; h < n; h++){
+            *sum += *(*a+h)*(h%2 == 0?1:-1)*(determinant(n-1,submtx(n, a, h), sum));
+        }
+    }
+    return *sum;
+}
+
+
+
+
+
+int main(){
+    int n;
+    printf("Enter the number of nxn: ");
+    scanf("%d",&n);
+    int det = 0;
+    int matrix[n][n];
+    int* matrix_p[n];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            scanf("%d",&matrix[i][j]);
+        }
+        matrix_p[i] = matrix[i];
+        
+    }
+
+    printf("Final det is: %d", determinant(n, matrix_p, &det));
+
+    return 0;
+}
