@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun 11 23:15:42 2020
 
-@author: Dell
-"""
 
 import tkinter as tk
 from tkinter import font
@@ -14,8 +9,7 @@ WIDTH = 600
 
 def test_button(entry):
     print("This is the entry: ", entry)
-#api.openweathermap.org/data/2.5/forecast?q={city name},{country code}
-#e99b40640d9df3faa805c81e75874f8f
+
 
 def format_response(weather):
     try:
@@ -28,7 +22,7 @@ def format_response(weather):
         final_str = 'There was a problem to retrieve that info.'
     return final_str
 def get_weather(city):
-    weather_key = 'e99b40640d9df3faa805c81e75874f8f'
+    weather_key = 'INSERT YOUR KEY HERE'
     url = 'https://api.openweathermap.org/data/2.5/weather'
     params = {'APPID': weather_key, 'q' : city, 'units': 'imperial'}
     response = requests.get(url, params= params)
